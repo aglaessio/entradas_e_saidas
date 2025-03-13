@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Movimentação de Materiais</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📋 FORMULÁRIO DE MOVIMENTAÇÃO DE MATERIAIS</h1>
+        <p>Preencha os campos abaixo com as informações de movimentação:</p>
+        <hr>
+
+        <form id="movimentacaoForm">
+            <!-- 1. INFORMAÇÕES GERAIS -->
+            <div class="section">
+                <h2><i class="fas fa-info-circle icon-blue"></i> 1. INFORMAÇÕES GERAIS</h2>
+                <div class="form-group">
+                    <label for="evento">⦁ Nome do Evento:</label>
+                    <input type="text" id="evento" name="evento" required>
+                </div>
+                <div class="form-group">
+                    <label for="movimentacao">⦁ Tipo de Movimentação:</label>
+                    <select id="movimentacao" name="movimentacao" required>
+                        <option value="entrada">Entrada</option>
+                        <option value="saida">Saída</option>
+                        <option value="retorno">Retorno</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="data">⦁ Data:</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+            </div>
+            <hr>
+
+            <!-- 2. ITENS -->
+            <div class="section">
+                <h2><i class="fas fa-boxes icon-purple"></i> 2. ITENS</h2>
+                <!-- Item 1 -->
+                <fieldset class="grupo-itens">
+                    <legend>Item 1</legend>
+                    <div class="form-group">
+                        <label for="material1">⦁ Tipo de Material:</label>
+                        <select id="material1" name="material1" required>
+                            <option value="">Selecione um material</option>
+                            <option value="access_point_ubiquiti_unifi_ac_mesh_pro">ACCESS POINT UBIQUITI UNIFI AC MESH PRO</option>
+                            <option value="antena_nano_loco_m2">ANTENA NANO LOCO M2</option>
+                            <option value="antena_nano_loco_m5">ANTENA NANO LOCO M5</option>
+                            <option value="balanca_eletronica_digital_comercial">BALANÇA ELETRÔNICA DIGITAL COMERCIAL</option>
+                            <option value="balcao_financeiro_185x50x80_cm">BALCÃO FINANCEIRO: 185X50X80 CM</option>
+                            <option value="balcao_sala_180x50x68_cm">BALCÃO SALA: 180X50X68 CM</option>
+                            <option value="balcao_sala_central_235x50x80_cm">BALCÃO SALA CENTRAL: 235X50X80 CM</option>
+                            <option value="balcao_sala_p_100x40x75_cm">BALCÃO SALA P: 100X40X75 CM</option>
+                            <option value="bobina_termossensivel_agroplay_oji">BOBINA TERMOSSENSÍVEL AGROPLAY OJI 57x16Mts - BAR</option>
+                            <option value="bobina_termoticket_agroplay_autopel">BOBINA TERMOTICKET AGROPLAY AUTOPEL 57x15Mts - INGRESSO</option>
+                            <option value="bobina_termoticket_ticketme_autopel">BOBINA TERMOTICKET TICKETME AUTOPEL 57x15Mts - INGRESSO</option>
+                            <option value="cadeira_bar_dobravel_madeira">CADEIRA BAR DOBRÁVEL EM MADEIRA</option>
+                            <option value="cadeira_de_escritorio_com_rodinha">CADEIRA DE ESCRITÓRIO C/ RODINHA</option>
+                            <option value="cadeira_de_escritorio_diretoria_com_rodinha">CADEIRA DE ESCRITÓRIO DIRETORIA C/ RODINHA</option>
+                            <option value="cadeira_simples_fixa">CADEIRA SIMPLES FIXA</option>
+                            <option value="caixa_organizadora_com_tampa_preta_56_lts">CAIXA ORGANIZADORA C/TAMPA PRETA 56 LTS - TRAVA PRATA</option>
+                            <option value="cafeteira_eletrica_electrolux">CAFETEIRA ELÉTRICA ELECTROLUX</option>
+                            <option value="churrasqueira_bafo_a_carvao_com_roda_maragogi">CHURRASQUEIRA BAFO Á CARVÃO C/ RODA MARAGOGI</option>
+                            <option value="coletor_de_dados_l2s_pro_sunmi_rfid">COLETOR DE DADOS L2s PRO SUNMI RFID</option>
+                            <option value="extensao_eletrica">EXTENSÃO ELÉTRICA</option>
+                            <option value="filtro_de_linha">FILTRO DE LINHA</option>
+                            <option value="fogao_continental_5_bocas">FOGÃO CONTINENTAL 5 BOCAS</option>
+                            <option value="frigobar">FRIGOBAR</option>
+                            <option value="geladeira_electrolux_frostfree">GELADEIRA ELECTROLUX FROSTFREE</option>
+                            <option value="impressora_bematech_mp_4200_th">IMPRESSORA BEMATECH MP-4200 TH</option>
+                            <option value="impressora_brother_mfc_7440n">IMPRESSORA BROTHER MFC-7440N</option>
+                            <option value="impressora_datamax">IMPRESSORA DATAMAX</option>
+                            <option value="impressora_diebold_tsp143mu">IMPRESSORA DIEBOLD TSP143MU</option>
+                            <option value="impressora_elgin_i9">IMPRESSORA ELGIN I9</option>
+                            <option value="impressora_zebra_tlp_2844">IMPRESSORA ZEBRA TLP 2844</option>
+                            <option value="leitor_optico_2d_usb">LEITOR ÓPTICO 2D USB</option>
+                            <option value="lixeira_de_escritorio_g">LIXEIRA DE ESCRITÓRIO G</option>
+                            <option value="lixeira_de_escritorio_m">LIXEIRA DE ESCRITÓRIO M</option>
+                            <option value="lixeira_de_escritorio_p">LIXEIRA DE ESCRITÓRIO P</option>
+                            <option value="mesa_bar_70x70_dobravel_madeira">MESA BAR 70x70 DOBRÁVEL EM MADEIRA</option>
+                            <option value="mesa_de_reuniao_200x110x78_cm">MESA DE REUNIÃO: 200X110X78 CM</option>
+                            <option value="mesa_dobravel_74x74x180cm_aco_preto">MESA DOBRÁVEL 74X74X180CM AÇO PRETO</option>
+                            <option value="mesa_edu_140x70x78_cm">MESA EDU: 140X70X78 CM</option>
+                            <option value="mesa_escritorio_3_gav_140x70x78_cm">MESA ESCRITÓRIO 3 GAV: 140X70X78 CM</option>
+                            <option value="mesa_garagem_200x70x78_cm">MESA GARAGEM: 200X70X78 CM</option>
+                            <option value="mesa_grande_sala_central_271x110x77_cm">MESA GRANDE SALA CENTRAL: 271X110X77 CM + PAINEL: 286X40X241 CM</option>
+                            <option value="mesas_escritorio_1_gav_140x70x78_cm">MESAS ESCRITÓRIO 1 GAV: 140X70X78 CM</option>
+                            <option value="rg_rap6260_wifi_6">RG-RAP6260 Wi-Fi 6</option>
+                            <option value="rg_rap6262_wifi_6">RG-RAP6262 Wi-Fi 6</option>
+                            <option value="smart_pos_pax_a930_bgwc">SMART POS - PAX_A930_BGWC</option>
+                            <option value="smart_pos_sunmi_p2_bgwc">SMART POS - SUNMI_P2_BGWC</option>
+                            <option value="smart_tv_samsung">SMART TV SAMSUNG</option>
+                            <option value="smartphone_motorola_moto_g14">SMARTPHONE MOTOROLA MOTO G14 4G 128GB</option>
+                            <option value="sofa">SOFÁ</option>
+                            <option value="starlink_gen2">STARLINK GEN2</option>
+                            <option value="starlink_gen3">STARLINK GEN3</option>
+                            <option value="switch_mercusys_ms108g">SWITCH MERCUSYS MS108G, 8P LAN GIGABIT 10/100/1000MBPS</option>
+                            <option value="t_eletrico">T ELÉTRICO</option>
+                            <option value="totem_fox_autoatendimento_elgin">TOTEM FOX AUTOATENDIMENTO - ELGIN</option>
+                            <option value="ventilador_de_pe_total_home_trj_20">VENTILADOR DE PÉ TOTAL HOME TRJ 20, PRETO, 43CM DE DIÂMETRO 127V</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantidade1">⦁ Quantidade:</label>
+                        <input type="number" id="quantidade1" name="quantidade1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patrimonio1">⦁ Patrimônio:</label>
+                        <input type="text" id="patrimonio1" name="patrimonio1" required>
+                    </div>
+                </fieldset>
+            </div>
+            <hr>
+
+            <!-- 3. DADOS DO REMETENTE -->
+            <div class="section">
+                <h2><i class="fas fa-user icon-green"></i> 3. DADOS DO REMETENTE</h2>
+                <div class="form-group">
+                    <label for="remetente_nome">⦁ Nome:</label>
+                    <input type="text" id="remetente_nome" name="remetente_nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="remetente_cpf">⦁ CPF:</label>
+                    <input type="text" id="remetente_cpf" name="remetente_cpf" required>
+                </div>
+                <div class="form-group">
+                    <label for="remetente_rg">⦁ RG:</label>
+                    <input type="text" id="remetente_rg" name="remetente_rg" required>
+                </div>
+                <div class="form-group">
+                    <label for="remetente_endereco">⦁ Endereço:</label>
+                    <input type="text" id="remetente_endereco" name="remetente_endereco" required>
+                </div>
+                <div class="form-group">
+                    <label for="remetente_cep">⦁ CEP:</label>
+                    <input type="text" id="remetente_cep" name="remetente_cep" required>
+                </div>
+            </div>
+            <hr>
+
+            <!-- 4. DADOS DO DESTINATÁRIO -->
+            <div class="section">
+                <h2><i class="fas fa-user icon-orange"></i> 4. DADOS DO DESTINATÁRIO</h2>
+                <div class="form-group">
+                    <label for="destinatario_nome">⦁ Nome:</label>
+                    <input type="text" id="destinatario_nome" name="destinatario_nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="destinatario_cpf">⦁ CPF:</label>
+                    <input type="text" id="destinatario_cpf" name="destinatario_cpf" required>
+                </div>
+                <div class="form-group">
+                    <label for="destinatario_rg">⦁ RG:</label>
+                    <input type="text" id="destinatario_rg" name="destinatario_rg" required>
+                </div>
+                <div class="form-group">
+                    <label for="destinatario_endereco">⦁ Endereço:</label>
+                    <input type="text" id="destinatario_endereco" name="destinatario_endereco" required>
+                </div>
+                <div class="form-group">
+                    <label for="destinatario_cep">⦁ CEP:</label>
+                    <input type="text" id="destinatario_cep" name="destinatario_cep" required>
+                </div>
+            </div>
+            <hr>
+
+            <!-- 5. DADOS DO VOLUME -->
+            <div class="section">
+                <h2><i class="fas fa-box icon-red"></i> 5. DADOS DO VOLUME</h2>
+                <div class="form-group">
+                    <label for="comprimento">⦁ Comprimento (cm):</label>
+                    <input type="number" id="comprimento" name="comprimento" required>
+                </div>
+                <div class="form-group">
+                    <label for="largura">⦁ Largura (cm):</label>
+                    <input type="number" id="largura" name="largura" required>
+                </div>
+                <div class="form-group">
+                    <label for="altura">⦁ Altura (cm):</label>
+                    <input type="number" id="altura" name="altura" required>
+                </div>
+                <div class="form-group">
+                    <label for="peso">⦁ Peso (kg):</label>
+                    <input type="number" id="peso" name="peso" required>
+                </div>
+            </div>
+            <hr>
+
+            <!-- 6. OBSERVAÇÕES -->
+            <div class="section">
+                <h2><i class="fas fa-comment icon-blue"></i> 6. OBSERVAÇÕES</h2>
+                <div class="form-group">
+                    <label for="observacoes">⦁ Observações:</label>
+                    <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+                </div>
+            </div>
+
+            <button type="button" id="gerarPDF">Gerar PDF</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
