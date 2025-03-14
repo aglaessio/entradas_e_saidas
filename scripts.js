@@ -76,11 +76,11 @@ document.getElementById("gerarPDF").addEventListener("click", function () {
 
 // Limita o número de caracteres por linha e o número de linhas nos campos de Patrimônio e Observações
 document.getElementById("patrimonio1").addEventListener("input", function () {
-    limitTextArea(this, 120, 4); // 90 caracteres por linha, máximo de 4 linhas
+    limitTextArea(this, 100, 4); // 90 caracteres por linha, máximo de 4 linhas
 });
 
 document.getElementById("observacoes").addEventListener("input", function () {
-    limitTextArea(this, 120, 8); // 90 caracteres por linha, máximo de 8 linhas
+    limitTextArea(this, 100, 8); // 90 caracteres por linha, máximo de 8 linhas
 });
 
 function limitTextArea(textarea, maxCharsPerLine, maxLines) {
