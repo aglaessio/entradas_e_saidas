@@ -5,16 +5,11 @@ document.getElementById("gerarPDF").addEventListener("click", function () {
 
     // Função para formatar a data no padrão brasileiro (DD/MM/AAAA)
     function formatarDataBrasileira(data) {
-        const dia = String(data.getDate()).padStart(2, '0');
-        const mes = String(data.getMonth() + 1).padStart(2, '0'); // Mês começa do 0
-        const ano = data.getFullYear();
-        return `${dia}/${mes}/${ano}`;
+        const [ano, mes, dia] = data.split('-'); // Divide a data no formato AAAA-MM-DD
+        return `${dia}/${mes}/${ano}`; // Retorna no formato DD/MM/AAAA
     }
 
-    const formattedDate = formatarDataBrasileira(now); // Garante o formato DD/MM/AAAA
-    const formattedTime = now.toLocaleTimeString("pt-BR");
-
-    // Restante do código para gerar o PDF...
+    // Configurações de fonte e cor
     doc.setFont("Times", "normal");
     doc.setTextColor(0, 0, 0);
 
@@ -45,6 +40,11 @@ document.getElementById("gerarPDF").addEventListener("click", function () {
             const input = group.querySelector("input, select, textarea");
             let value = input.value || "Não informado";
 
+            // Formata a data se o campo for do tipo "date"
+            if (input.type === "date" && value) {
+                value = formatarDataBrasileira(value); // Converte para DD/MM/AAAA
+            }
+
             doc.setFontSize(8);
             doc.setFont("Times", "bold");
             doc.text(cleanLabel, 50, y, { align: "right" });
@@ -60,7 +60,7 @@ document.getElementById("gerarPDF").addEventListener("click", function () {
 
     // Adiciona "Gerado em:" no canto inferior direito
     doc.setFontSize(8);
-    const text = `Gerado em: ${formattedDate} ${formattedTime}`;
+    const text = `Gerado em: ${now.toLocaleDateString("pt-BR")} ${now.toLocaleTimeString("pt-BR")}`;
     const textWidth = doc.getTextWidth(text);
     const pageWidth = doc.internal.pageSize.getWidth();
     const xPosition = pageWidth - 10 - textWidth;
@@ -69,3 +69,38 @@ document.getElementById("gerarPDF").addEventListener("click", function () {
     // Salva o PDF
     doc.save("formulario_movimentacao.pdf");
 });
+
+// Limita o número de caracteres por linha e o número de linhas nos campos de Patrimônio e Observações
+document.getElementById("patrimonio1").addEventListener("input", function () {
+    limitTextArea(this, 90, 4); // 90 caracteres por linha, máximo de 4 linhas
+});
+
+document.getElementById("observacoes").addEventListener("input", function () {
+    limitTextArea(this, 90, 8); // 90 caracteres por linha, máximo de 8 linhas
+});
+
+function limitTextArea(textarea, maxCharsPerLine, maxLines) {
+    let text = textarea.value;
+
+    // Divide o texto em linhas
+    let lines = text.split("\n");
+
+    // Processa cada linha para garantir que não exceda o limite de caracteres
+    let processedLines = [];
+    for (let line of lines) {
+        while (line.length > maxCharsPerLine) {
+            // Corta a linha no limite de caracteres e adiciona à lista de linhas processadas
+            processedLines.push(line.substring(0, maxCharsPerLine));
+            line = line.substring(maxCharsPerLine);
+        }
+        processedLines.push(line); // Adiciona o restante da linha
+    }
+
+    // Limita o número total de linhas
+    if (processedLines.length > maxLines) {
+        processedLines.length = maxLines; // Corta as linhas excedentes
+    }
+
+    // Junta as linhas processadas e atualiza o valor do textarea
+    textarea.value = processedLines.join("\n");
+}
