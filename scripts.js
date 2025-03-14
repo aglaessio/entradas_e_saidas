@@ -67,7 +67,9 @@ document.getElementById("gerarPDF").addEventListener("click", function () {
     doc.text(text, xPosition, 280);
 
     // Salva o PDF
-    doc.save("formulario_movimentacao.pdf");
+    const nomeEvento = document.getElementById("evento").value.trim(); // Pega o valor do campo "Nome do Evento"
+const nomeArquivo = nomeEvento ? `${nomeEvento}.pdf` : "formulario_movimentacao.pdf"; // Define o nome do arquivo
+doc.save(nomeArquivo); // Salva o PDF com o nome personalizado
 });
 
 // Limita o número de caracteres por linha e o número de linhas nos campos de Patrimônio e Observações
