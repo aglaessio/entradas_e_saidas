@@ -178,3 +178,6 @@ button:hover {
         font-size: 0.85rem;
     }
 }
+.form-group textarea {
+    resize: none; /* Impede o redimensionamento do textarea */
+}
