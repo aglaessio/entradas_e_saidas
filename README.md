@@ -1,118 +1,152 @@
-📋# Formulário de Movimentação de Materiais
+Manual de Utilização do Formulário de Movimentação de Materiais
+Este manual fornece instruções detalhadas sobre como utilizar o Formulário de Movimentação de Materiais, que permite registrar entradas, saídas e retornos de materiais, além de gerar um PDF com os dados preenchidos.
 
-Este projeto é um formulário web para registrar movimentações de materiais, como entradas, saídas e retornos. Ele permite preencher informações gerais, detalhes dos itens, dados do remetente e destinatário, além de gerar um PDF com os dados preenchidos.
+1. Acesso ao Formulário
+Abrir o Formulário:
 
-## Funcionalidades
+Navegue até o arquivo index.html no seu navegador.
 
-- **Formulário de Movimentação**: Preencha informações sobre o evento, tipo de movimentação, data, itens, remetente, destinatário e observações.
-- **Geração de PDF**: Gere um PDF com todos os dados preenchidos no formulário.
-- **Responsivo**: Layout adaptável para dispositivos móveis e tablets.
-- **Design Moderno**: Interface limpa e intuitiva, com ícones e cores suaves.
+O formulário será carregado automaticamente.
 
-## Tecnologias Utilizadas
+Interface do Formulário:
 
-- **HTML5**: Estrutura do formulário.
-- **CSS3**: Estilização do formulário, com layout responsivo e design moderno.
-- **JavaScript**: Lógica para gerar o PDF usando a biblioteca `jsPDF`.
-- **Bibliotecas Externas**:
-  - [Font Awesome](https://fontawesome.com/): Ícones utilizados no formulário.
-  - [Google Fonts](https://fonts.google.com/): Fonte Roboto para o design moderno.
-  - [jsPDF](https://parall.ax/products/jspdf): Biblioteca para gerar PDFs.
+O formulário possui uma interface limpa e intuitiva, dividida em seções para facilitar o preenchimento.
 
-## Como Usar
+O layout é responsivo, adaptando-se a dispositivos móveis e tablets.
 
-1. **Clone o repositório**:
-   ```bash
-   git clone https://github.com/seu-usuario/formulario-movimentacao.git
-Abra o projeto:
+2. Preenchimento do Formulário
+O formulário é dividido em 6 seções principais. Siga as instruções abaixo para preencher cada uma delas:
 
-Navegue até a pasta do projeto:
+1. Informações Gerais
+Nome do Evento: Insira o nome do evento relacionado à movimentação.
 
-bash
-Copy
-cd formulario-movimentacao
-Abra o arquivo index.html no seu navegador.
+Tipo de Movimentação: Selecione o tipo de movimentação (Entrada, Saída ou Retorno).
 
-Preencha o formulário:
+Data: Selecione a data da movimentação no formato DD/MM/AAAA.
 
-Insira as informações solicitadas nos campos do formulário.
+2. Material
+Tipo de Material: Selecione o material que está sendo movimentado na lista de opções.
 
-Clique no botão "Gerar PDF" para gerar um arquivo PDF com os dados preenchidos.
+Quantidade: Insira a quantidade do material.
 
-Visualize o PDF:
+Patrimônio: Adicione informações sobre o patrimônio (número de série, identificação, etc.). O campo permite até 360 caracteres.
 
-O PDF será salvo automaticamente no seu computador com o nome formulario_movimentacao.pdf.
+3. Dados do Remetente
+Nome: Insira o nome completo do remetente.
 
-Estrutura do Projeto
-index.html: Estrutura do formulário.
+CPF: Insira o CPF do remetente.
 
-styles.css: Estilos CSS para o formulário.
+RG: Insira o RG do remetente.
 
-scripts.js: Lógica JavaScript para gerar o PDF.
+Endereço: Insira o endereço completo do remetente.
 
-Personalização
-Adicionar mais campos: Para adicionar mais campos ao formulário, edite o arquivo index.html e adicione novos elementos dentro das seções existentes.
+CEP: Insira o CEP do remetente.
 
-Alterar o design: Para modificar o design, edite o arquivo styles.css.
+4. Dados do Destinatário
+Nome: Insira o nome completo do destinatário.
 
-Modificar o PDF: Para ajustar o layout do PDF gerado, edite o arquivo scripts.js.
+CPF: Insira o CPF do destinatário.
 
-Exemplo de Uso
-Preencha o formulário com as informações de movimentação.
+RG: Insira o RG do destinatário.
+
+Endereço: Insira o endereço completo do destinatário.
+
+CEP: Insira o CEP do destinatário.
+
+5. Dados do Volume
+Comprimento (cm): Insira o comprimento do volume em centímetros.
+
+Largura (cm): Insira a largura do volume em centímetros.
+
+Altura (cm): Insira a altura do volume em centímetros.
+
+Peso (kg): Insira o peso do volume em quilogramas.
+
+6. Observações
+Observações: Adicione qualquer informação adicional relevante sobre a movimentação. O campo permite até 720 caracteres.
+
+3. Geração do PDF
+Gerar PDF:
+
+Após preencher todas as seções do formulário, clique no botão "Gerar PDF" localizado no final da página.
+
+O sistema irá gerar um arquivo PDF com todas as informações preenchidas.
+
+Visualização do PDF:
+
+O PDF será salvo automaticamente no seu computador com o nome baseado no campo "Nome do Evento". Por exemplo, se o nome do evento for "Evento de Tecnologia 2023", o arquivo será salvo como Evento de Tecnologia 2023.pdf.
+
+Caso o campo "Nome do Evento" esteja vazio, o arquivo será salvo com o nome padrão formulario_movimentacao.pdf.
+
+4. Limitações e Observações
+Limite de Caracteres:
+
+O campo Patrimônio permite até 360 caracteres.
+
+O campo Observações permite até 720 caracteres.
+
+O sistema impede que o usuário insira mais caracteres do que o permitido.
+
+Campos Obrigatórios:
+
+Todos os campos marcados com um asterisco (*) ou destacados em vermelho são obrigatórios. O formulário não permitirá a geração do PDF se algum campo obrigatório não for preenchido.
+
+Formatação de Data:
+
+A data no PDF será formatada automaticamente no padrão brasileiro (DD/MM/AAAA).
+
+5. Personalização do Formulário
+Se necessário, o formulário pode ser personalizado para atender a necessidades específicas:
+
+Adicionar Campos:
+
+Para adicionar novos campos, edite o arquivo index.html e insira os elementos HTML necessários dentro das seções existentes.
+
+Alterar Design:
+
+Para modificar o design do formulário, edite o arquivo styles.css.
+
+Modificar o PDF:
+
+Para ajustar o layout do PDF gerado, edite o arquivo scripts.js.
+
+6. Exemplo de Uso
+Preenchimento do Formulário:
+
+Nome do Evento: Evento de Tecnologia 2023
+
+Tipo de Movimentação: Entrada
+
+Data: 10/10/2023
+
+Material: IMPRESSORA ELGIN I9
+
+Quantidade: 2
+
+Patrimônio: 12345
+
+Remetente: João Silva
+
+Destinatário: Maria Oliveira
+
+Volume: 50 cm (comprimento), 30 cm (largura), 20 cm (altura), 10 kg (peso)
+
+Observações: Material frágil, manusear com cuidado.
+
+Geração do PDF:
 
 Clique em "Gerar PDF".
 
-Um PDF será gerado com o seguinte formato:
+O PDF será salvo com o nome Evento de Tecnologia 2023.pdf.
 
-Copy
-FORMULÁRIO DE MOVIMENTAÇÃO DE MATERIAIS
-----------------------------------------
-1. INFORMAÇÕES GERAIS
-   Nome do Evento: Evento de Tecnologia 2023
-   Tipo de Movimentação: Entrada
-   Data: 10/10/2023
+7. Suporte e Contribuição
+Problemas ou Dúvidas:
 
-2. ITENS
-   Tipo de Material: IMPRESSORA ELGIN I9
-   Quantidade: 2
-   Patrimônio: 12345
+Em caso de problemas ou dúvidas, entre em contato com o suporte técnico.
 
-3. DADOS DO REMETENTE
-   Nome: João Silva
-   CPF: 123.456.789-00
-   RG: 9876543
-   Endereço: Rua das Flores, 123
-   CEP: 12345-678
+Contribuição:
 
-4. DADOS DO DESTINATÁRIO
-   Nome: Maria Oliveira
-   CPF: 987.654.321-00
-   RG: 1234567
-   Endereço: Avenida Principal, 456
-   CEP: 87654-321
+Contribuições são bem-vindas! Siga as instruções no arquivo README.md para contribuir com o projeto.
 
-5. DADOS DO VOLUME
-   Comprimento (cm): 50
-   Largura (cm): 30
-   Altura (cm): 20
-   Peso (kg): 10
-
-6. OBSERVAÇÕES
-   Observações: Material frágil, manusear com cuidado.
-
-Gerado em: 10/10/2023 14:30:45
-Contribuição
-Contribuições são bem-vindas! Siga os passos abaixo:
-
-Faça um fork do projeto.
-
-Crie uma branch para sua feature (git checkout -b feature/nova-feature).
-
-Commit suas mudanças (git commit -m 'Adicionando nova feature').
-
-Push para a branch (git push origin feature/nova-feature).
-
-Abra um Pull Request.
-
-Licença
-Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+8. Licença
+Este projeto está licenciado sob a licença MIT. Para mais detalhes, consulte o arquivo LICENSE.
